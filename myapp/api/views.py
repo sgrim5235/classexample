@@ -1,0 +1,10 @@
+from rest_framework import viewsets
+from .serializers import PersonSerializer
+from .. import models
+
+class PersonViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset=models.Person.objects.all()
+    serializer_class=PersonSerializer
